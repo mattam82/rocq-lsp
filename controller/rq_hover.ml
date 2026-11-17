@@ -95,7 +95,7 @@ let info_of_const env cr =
   let impargs = List.map Impargs.binding_kind_of_status impargs in
   let typ = Printer.pr_ltype_env env sigma ~impargs typ in
   let inst =
-    if Environ.polymorphic_constant cr env then
+    if Environ.is_polymorphic env (Names.GlobRef.ConstRef cr) then
       Printer.pr_universe_instance sigma inst
     else Coq.Pp_t.mt ()
   in

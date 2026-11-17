@@ -19,7 +19,9 @@
 type binding_kind = Glob_term.binding_kind [@@deriving sexp,yojson,hash,compare]
 type 'a glob_sort_gen = 'a Glob_term.glob_sort_gen [@@deriving sexp,yojson,hash,compare]
 
-type glob_level = Glob_term.glob_level
+type glob_instance_univ = Glob_term.glob_instance_univ
+ [@@deriving sexp,yojson,hash,compare]
+type glob_univ = Glob_term.glob_univ
  [@@deriving sexp,yojson,hash,compare]
 
 type glob_sort = Glob_term.glob_sort

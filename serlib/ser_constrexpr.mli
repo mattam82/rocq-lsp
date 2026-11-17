@@ -34,7 +34,6 @@ type notation_entry_relative_level = Constrexpr.notation_entry_relative_level [@
 
 type universe_decl_expr = Constrexpr.universe_decl_expr [@@deriving sexp, yojson, hash,compare]
 type ident_decl = Constrexpr.ident_decl [@@deriving sexp, yojson, hash,compare]
-type cumul_ident_decl = Constrexpr.cumul_ident_decl [@@deriving sexp, yojson, hash,compare]
 type univ_constraint_expr = Constrexpr.univ_constraint_expr [@@deriving sexp, yojson, hash,compare]
 type sort_constraint_expr = Constrexpr.sort_constraint_expr [@@deriving sexp, yojson, hash,compare]
 type name_decl = Constrexpr.name_decl [@@deriving sexp, yojson, hash,compare]

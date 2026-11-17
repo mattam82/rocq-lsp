@@ -44,8 +44,12 @@ type sort_name_expr =
   [%import: Constrexpr.sort_name_expr]
   [@@deriving sexp,yojson,hash,compare]
 
-type univ_level_expr =
-  [%import: Constrexpr.univ_level_expr]
+type universe_expr =
+  [%import: Constrexpr.universe_expr]
+  [@@deriving sexp,yojson,hash,compare]
+
+type opt_universe_expr =
+  [%import: Constrexpr.opt_universe_expr]
   [@@deriving sexp,yojson,hash,compare]
 
 type quality_expr =
@@ -94,14 +98,6 @@ type universe_decl_expr =
 
 type ident_decl =
   [%import: Constrexpr.ident_decl]
-  [@@deriving sexp,yojson,hash,compare]
-
-type cumul_univ_decl_expr =
-  [%import: Constrexpr.cumul_univ_decl_expr]
-  [@@deriving sexp,yojson,hash,compare]
-
-type cumul_ident_decl =
-  [%import: Constrexpr.cumul_ident_decl]
   [@@deriving sexp,yojson,hash,compare]
 
 type name_decl =

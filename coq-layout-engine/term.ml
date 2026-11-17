@@ -60,9 +60,7 @@ let ly_named_sort ((s, _i) : sort_name_expr * int) = ly_sort_name_expr s
 let ly_sort (s : sort_expr) =
   let _qv_expr, s = s in
   match s with
-  | Glob_term.UAnonymous { rigid } ->
-    (* XXX: What's going on here *)
-    if rigid == UnivRigid then BM.Sort [ "Type" ] else BM.Sort [ "Type" ]
+  | Glob_term.UAnonymous _ -> BM.Sort [ "Type" ]
   | Glob_term.UNamed sl -> BM.Sort (List.map ly_named_sort sl)
 
 type _cast_kind =

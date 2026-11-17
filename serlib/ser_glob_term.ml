@@ -66,8 +66,12 @@ type 'a glob_sort_gen =
  *   [%import: 'a Glob_term.glob_sort_expr]
  *   [@@deriving sexp,yojson] *)
 
-type glob_level =
-  [%import: Glob_term.glob_level]
+type glob_instance_univ =
+  [%import: Glob_term.glob_instance_univ]
+  [@@deriving sexp,yojson,hash,compare]
+
+type glob_univ =
+  [%import: Glob_term.glob_univ]
   [@@deriving sexp,yojson,hash,compare]
 
 type glob_constraint =

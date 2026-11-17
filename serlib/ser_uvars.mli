@@ -20,7 +20,22 @@ open Sexplib
 
 module Variance : SerType.SJHC with type t = UVars.Variance.t
 
+module Position : SerType.SJHC with type t = UVars.Position.t
+
+module VariancePair : SerType.SJHC with type t = UVars.VariancePair.t
+
+module VariancePos : SerType.SJHC with type t = UVars.VariancePos.t
+
+module VarianceOccurrence : SerType.SJHC with type t = UVars.VarianceOccurrence.t
+
+module Variances : SerType.SJHC with type t = UVars.Variances.t
+
+module LevelInstance : SerType.SJHC with type t = UVars.LevelInstance.t
+
 module Instance : SerType.SJHC with type t = UVars.Instance.t
+
+type variances = UVars.variances
+  [@@deriving sexp,yojson,hash,compare]
 
 type bound_names = UVars.bound_names
   [@@deriving sexp,yojson,hash,compare]

@@ -206,7 +206,7 @@ let count_edges univ =
       +
       match node with
       | UGraph.Alias _ -> 1
-      | Node m -> Univ.Level.Map.cardinal m)
+      | Node m -> List.length m)
     univ
     (Univ.Level.Map.cardinal univ)
 

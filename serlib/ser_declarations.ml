@@ -138,6 +138,10 @@ type template_universes =
   [%import: Declarations.template_universes]
   [@@deriving sexp,yojson,hash,compare]
 
+type ind_universes =
+  [%import: Declarations.ind_universes]
+  [@@deriving sexp,yojson,hash,compare]
+
 type mutual_inductive_body =
   [%import: Declarations.mutual_inductive_body
   [@with Context.section_context := Context.Named.t;]]

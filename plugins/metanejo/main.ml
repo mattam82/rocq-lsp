@@ -199,6 +199,7 @@ let analyze (CAst.{ loc = _; v } : Vernacexpr.vernac_control) : _ option =
     | VernacUniverse _ -> None
     | VernacSort _ -> None
     | VernacConstraint _ -> None
+    | VernacCumulativityTransparent _ -> None
     | VernacAddRewRule (_, _) -> None
     | VernacCanonical _ -> None
     | VernacCoercion (_, _) -> None
@@ -224,6 +225,7 @@ let analyze (CAst.{ loc = _; v } : Vernacexpr.vernac_control) : _ option =
     | VernacMemOption (_, _) -> None
     | VernacPrintOption _ -> None
     | VernacCheckMayEval (_, _, _) -> None
+    | VernacCheckConstraint (_, _) -> None
     | VernacGlobalCheck _ -> None
     | VernacDeclareReduction (_, _) -> None
     | VernacPrint _ -> None

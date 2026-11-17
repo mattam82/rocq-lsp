@@ -40,12 +40,25 @@ module Variance = struct
 
 end
 
+
+module Position = SerType.Opaque(struct type t = UVars.Position.t let name = "UVars.Position.t" end)
+
+module VariancePair = SerType.Opaque(struct type t = UVars.VariancePair.t let name = "UVars.VariancePair.t" end)
+
+module VariancePos = SerType.Opaque(struct type t = UVars.VariancePos.t let name = "UVars.VariancePos.t" end)
+
+module VarianceOccurrence = SerType.Opaque(struct type t = UVars.VarianceOccurrence.t let name = "UVars.VarianceOccurrence.t" end)
+
+module Variances = SerType.Opaque(struct type t = UVars.Variances.t let name = "UVars.Variances.t" end)
+
+module LevelInstance = SerType.Opaque(struct type t = UVars.LevelInstance.t let name = "UVars.LevelInstance.t" end)
+
 module Instance = struct
 
 type t =
   [%import: UVars.Instance.t]
 
-type _t = Instance of (Quality.t array * Level.t array)
+type _t = Instance of (Quality.t array * Universe.t array)
   [@@deriving sexp, yojson, hash, compare]
 
 let _instance_put instance            = Instance (UVars.Instance.to_array instance)
@@ -64,6 +77,9 @@ let compare i1 i2 = compare__t (Instance (UVars.Instance.to_array i1)) (Instance
 
 end
 
+type variances = Variances.t
+  [@@deriving sexp,yojson,hash,compare]
+
 type bound_names = [%import: UVars.bound_names]
   [@@deriving sexp,yojson,hash,compare]
 
@@ -71,7 +87,7 @@ module UContext = struct
 
   module I = struct
     type t = UVars.UContext.t
-    type _t = bound_names * (Instance.t * PConstraints.t)
+    type _t = bound_names * (LevelInstance.t * PConstraints.t)
     [@@deriving sexp,yojson,hash,compare]
 
     let to_t (un, cs) = UVars.UContext.make un cs

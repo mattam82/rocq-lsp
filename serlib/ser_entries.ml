@@ -35,6 +35,14 @@ module CPrimitives  = Ser_cPrimitives
  *   [%import: Entries.inductive_universes]
  *   [@@deriving sexp] *)
 
+type variance_declaration_entry =
+  [%import: Entries.variance_declaration_entry]
+  [@@deriving sexp]
+
+type variance_entry =
+  [%import: Entries.variance_entry]
+  [@@deriving sexp]
+
 type universes_entry =
   [%import: Entries.universes_entry]
   [@@deriving sexp]
@@ -45,10 +53,6 @@ type 'a in_universes_entry =
 
 type one_inductive_entry =
   [%import: Entries.one_inductive_entry]
-  [@@deriving sexp]
-
-type variance_entry =
-  [%import: Entries.variance_entry]
   [@@deriving sexp]
 
 (* type mutual_inductive_entry =
